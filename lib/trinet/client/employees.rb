@@ -8,6 +8,14 @@ module Trinet
       def employee_details(company_id, employee_id)
         get "identity/#{company_id}/#{employee_id}/biographical-details"
       end
+
+      def employee_roles(company_id, employee_id)
+        employees = all_employees company_id, { "viewType" => "all" }
+        employees.each do |e|
+          return e["roles"] if e["employeeId"] == employee_id
+        end
+        raise "#{employee_id} not found in company #{company_id}"
+      end
     end
   end
 end

@@ -55,7 +55,7 @@ module Trinet
       response = connection.send(method.to_sym, path, parameters) do |req|
         req.headers["Authorization"] = "apikey #{api_key}"
       end
-      response["data"]
+      response.body["data"]
     rescue Faraday::Error::ClientError
       raise Trinet::RequestError, $!, $!.backtrace
     end
