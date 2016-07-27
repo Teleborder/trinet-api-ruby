@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
     c = Trinet.client api_key: "MYAPIKEY"
-    c.all_employees "31T", { "viewType" : "all" }
+    c.all_employees "31T", { "viewType" => "all" }
 
 ## Development
 
