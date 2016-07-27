@@ -19,8 +19,8 @@ Or install it yourself as:
     $ gem install trinet
 
 ## Usage
-    c = Trinet.client api_key : "MYAPIKEY"
-    c.all_employees "31T", { "viewType" : "all"}
+    c = Trinet.client api_key: "MYAPIKEY"
+    c.all_employees "31T", { "viewType" : "all" }
 
 ## Development
 
