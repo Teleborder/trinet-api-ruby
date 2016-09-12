@@ -10,7 +10,7 @@ module Trinet
       end
 
       def employee_roles(company_id, employee_id)
-        employees = all_employees company_id, { "viewType" => "all" }
+        employees = all_employees company_id, { "employeeId" => employee_id, "viewType" => "all" }
         employees["employeeData"].each do |e|
           return e["roles"] if e["employeeId"] == employee_id
         end
