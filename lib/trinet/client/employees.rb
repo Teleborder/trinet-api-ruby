@@ -14,7 +14,7 @@ module Trinet
         employees && employees["employeeData"].each do |e|
           return e["roles"] if e["employeeId"] == employee_id
         end
-        raise "#{employee_id} not found in company #{company_id}"
+        raise Trinet::RequestError, "#{employee_id} not found in company #{company_id}"
       end
     end
   end
