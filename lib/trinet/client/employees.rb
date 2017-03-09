@@ -6,7 +6,8 @@ module Trinet
       end
 
       def employee_details(company_id, employee_id)
-        get "identity/#{company_id}/#{employee_id}/biographical-details"
+        response = all_employees company_id, { "employeeId" => employee_id, "viewType" => "all" }
+        response["employeeData"].first
       end
 
       def employee_roles(company_id, employee_id)

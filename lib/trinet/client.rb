@@ -33,9 +33,6 @@ module Trinet
     private
 
     def get(path, params = nil)
-      # TODO: Remove this after Authorization header is fully supported
-      params ||= {}
-      params[:apikey] ||= api_key
       request(:get, path, params)
     end
 
